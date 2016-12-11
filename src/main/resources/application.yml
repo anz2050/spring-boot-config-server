@@ -1,0 +1,24 @@
+# HTTP Server
+server:
+  port: 8888 #${vcap.PORT}   # HTTP (Tomcat) port
+  
+# Spring properties
+spring:
+  application:
+     name: configserver #${vcap.application.name}
+  profiles:
+    active: dev
+#  cloud:
+#    services:
+#      registrationMethod: route
+
+#Disable HTTP Basic Authentication
+security:
+  basic:
+    enabled: false
+
+# Logging
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
